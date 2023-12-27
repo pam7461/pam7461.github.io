@@ -23,12 +23,60 @@
       overflow:hidden;
       background:var(--main-color);
     }
-
-
+    #header .container{
+      width:1280px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+    #header h1{
+      position:fixed;
+      left:100px;
+      top:50%;
+      z-index:10000;
+      transform:translateY(-50%);
+      writing-mode:vertical-lr;
+      font-weight:900;
+      font-size:3em;
+    }
+    #header h1 span{
+      padding-bottom:0.5em;
+    }
+    #header nav{
+      position:fixed;
+      right:100px;
+      top:50%;
+      z-index:10000;
+      transform:translateY(-50%);
+    }
+    #header .main-nav a{     
+      display:block;
+      width:32px;
+      height:32px; 
+      margin-bottom:3em;
+      background:no-repeat center;
+      background-size:contain;
+      /* background-image:url(./images/home.svg); */
+      text-indent:-999999px;
+    }
+    #header .main-nav li:nth-child(1) a{
+      background-image:url(./images/home.svg);
+    }
+    #header .main-nav li:nth-child(2) a{
+      background-image:url(./images/skills.svg);
+    }
+    #header .main-nav li:nth-child(3) a{
+      background-image:url(./images/portfolio.svg);
+    }
+    #header .main-nav li:nth-child(4) a{
+      background-image:url(./images/contact.svg);
+    }
     .btn-nav{
       display:none;
     }
     
+    #wrap section{
+      color:#000;
+    }
   </style>
 </head>
 <body>
@@ -42,10 +90,10 @@
         </button>
         <nav class="">
           <ul class="main-nav">
-            <li><a href="#home">home</a></li>
-            <li><a href="#skills">skills</a></li>
-            <li><a href="#portfolio">portfolio</a></li>
-            <li><a href="#contact">contact us</a></li>
+            <li><a href="#home" title="home">home</a></li>
+            <li><a href="#skills" title="skills">skills</a></li>
+            <li><a href="#portfolio" title="portfolio">portfolio</a></li>
+            <li><a href="#contact" title="contact us">contact us</a></li>
           </ul>
         </nav>
       </div>
@@ -180,6 +228,13 @@
   </section>
   <script src="./js/jquery.min.js"></script>
   <script>
+    // let navItems = $('.main-nav a');
+    
+    // for(let idx=0;idx<=navItems.length-1;idx++){
+    //   let item = navItems.eq(idx).text();
+    //   navItems.eq(idx).css({backgroundImage:`url(./images/${item}.svg)`});
+    //   navItems.eq(idx).attr('title',item);
+    // }
     
   </script>
 </body>
