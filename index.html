@@ -268,7 +268,10 @@
   </section>
   <script src="./js/jquery.min.js"></script>
   <script>
-
+    $('.btn-nav').click(function(){
+      console.log($(this).children().toggleClass('active'));
+      $('nav').toggleClass('active');
+    })
   </script>
 </body>
 </html>
