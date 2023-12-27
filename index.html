@@ -7,6 +7,25 @@
 
   <title>2024 JHJ PORTFOLIO</title>
   <style>
+    @keyframes bounce1 {
+      0%{transform:scale(1,1)}
+      10%{transform:scale(0.9,1.1)}
+      20%{transform:scale(1.1,0.9)}
+      30%{transform:scale(0.95,1.05)}
+      40%{transform:scale(1,1)}
+    }
+    @keyframes bounce2 {
+      0%{transform:translateY(0)}
+      25%{transform:translateY(-10px)}
+      50%{transform:translateY(0)}
+      75%{transform:translateY(-5px)}
+      100%{transform:translateY(0)}
+    }
+    @keyframes item-show{
+      0%{opacity:0;transform:scale(0) rotate(360deg)}
+      100%{opacity:1;transform:scale(1) rotate(0deg)}
+    }
+
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
     :root{
@@ -41,6 +60,7 @@
       font-family:'Rubik Doodle Shadow','Noto Sans KR',sans-serif;
       font-weight:900;
       font-size:2.5em;
+      animation: bounce1 1.4s infinite;
     }
     #header h1 span{
       padding-right:0.5em;
@@ -64,7 +84,9 @@
       font-size:1.5em;
       text-transform:uppercase;
     }
-
+    #header .main-nav li:hover{
+      animation: bounce2 0.3s infinite;
+    }
 
     @media (max-width:1280px){
       #header .container{
@@ -89,19 +111,33 @@
       #header .btn-nav span.active{
         display:block;
       }
-      #header nav{
-        display:none;
+      #header nav{        
         position:absolute;
         left:0;
         right:0;
         top:100%;
         z-index:10000;
         border-top:1px solid var(--sub-color);
+        border-radius:500px;
         padding:40px 20px;
         background:var(--main-color);
+        /* display:none; */
+        /* transform:translateX(-100%); */
+        /* height:0; */
+        /* overflow:hidden; */
+        transform:scale(0) rotate(360deg); 
+        opacity:0;       
+        transition:0.3s;
       }
       #header nav.active{
-        display:block;
+        /* display:block; */
+        /* transform:translateX(0); */
+        /* height:291px; */
+        /* padding-top:40px; */
+        /* padding-bottom:40px; */
+        border-radius:0;
+        transform:scale(1) rotate(0);
+        opacity:1;
       }
       #header .main-nav{
         grid-template-columns:auto;
