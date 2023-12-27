@@ -3,147 +3,198 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="./css/reset.css">
+
+  <title>2024 JHJ PORTFOLIO</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+    :root{
+      font-family:'Noto Sans KR',sans-serif;
+      font-weight:500;
+      font-size:14px;
+      line-height:1.5em;
+      color:#fff;
+      --main-color:#000;
+      --sub-color:#fff;
+    }
+    #wrap{
+      overflow:hidden;
+    }
+    #header{
+      border-bottom:1px solid var(--main-color);
+      padding:2em 0;
+      background:var(--sub-color);
+      color:var(--main-color);
+    }
+    #header .container{
+      width:1280px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:auto auto;
+      justify-content:space-between;
+      align-items:center;
+    }
+    #header h1{
+      font-family:'Rubik Doodle Shadow','Noto Sans KR',sans-serif;
+      font-weight:900;
+      font-size:2.5em;
+    }
+    #header .btn-nav{
+      display:none;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>나의 포트폴리오</h1>
-    <nav>
+  <section id="wrap">
+    <header id="header">
+      <div class="container">
+        <h1><a href="./index.html">2024 JHJ PORTFOLIO</a></h1>
+        <button class="btn-nav">
+          <span class="nav-open">열기</span>
+          <span class="nav-close">닫기</span>
+        </button>
+        <nav>
+          <ul>
+            <li><a href="#home">홈</a></li>
+            <li><a href="#skills">스킬</a></li>
+            <li><a href="#portfolio">포트폴리오</a></li>
+            <li><a href="#contact">연락줘</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section id="home">
+      <h2>HOME</h2>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe nostrum qui nesciunt, architecto eos assumenda laborum, fugiat soluta laboriosam voluptatibus maxime obcaecati iure tenetur cumque voluptatem a quisquam nisi. Vitae.</p>    
+    </section>
+    <section id="skills">
+      <h2>SKILLS</h2>
       <ul>
-        <li><a href="#home">홈</a></li>
-        <li><a href="#skills">스킬</a></li>
-        <li><a href="#portfolio">포트폴리오</a></li>
-        <li><a href="#contact">연락줘</a></li>
+        <li>
+          <h3>HTML</h3>
+          <img src="" alt="html">
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>성취율 : 90%</p>
+        </li>
+        <li>
+          <h3>CSS</h3>
+          <img src="" alt="CSS">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p>성취율 : 95%</p>
+        </li>
+        <li>
+          <h3>javaScript</h3>
+          <img src="" alt="javaScript">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, dignissimos..</p>
+          <p>성취율 : 80%</p>
+        </li>
+        <li>
+          <h3>jQuery</h3>
+          <img src="" alt="jQuery">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, dignissimos..</p>
+          <p>성취율 : 90%</p>
+        </li>
+        <li>
+          <h3>PhotoShop</h3>
+          <img src="" alt="PhotoShop">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, dignissimos..</p>
+          <p>성취율 : 80%</p>
+        </li>
+        <li>
+          <h3>Illustrator</h3>
+          <img src="" alt="Illustrator">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, dignissimos..</p>
+          <p>성취율 : 70%</p>
+        </li>
       </ul>
-    </nav>
-  </header>
-  <section id="home">
-    <h2>HOME</h2>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe nostrum qui nesciunt, architecto eos assumenda laborum, fugiat soluta laboriosam voluptatibus maxime obcaecati iure tenetur cumque voluptatem a quisquam nisi. Vitae.</p>    
-  </section>
-  <section id="skills">
-    <h2>SKILLS</h2>
-    <ul>
-      <li>
-        <h3>HTML</h3>
-        <img src="" alt="html">
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>성취율 : 90%</p>
-      </li>
-      <li>
-        <h3>CSS</h3>
-        <img src="" alt="CSS">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <p>성취율 : 95%</p>
-      </li>
-      <li>
-        <h3>javaScript</h3>
-        <img src="" alt="javaScript">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, dignissimos..</p>
-        <p>성취율 : 80%</p>
-      </li>
-      <li>
-        <h3>jQuery</h3>
-        <img src="" alt="jQuery">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, dignissimos..</p>
-        <p>성취율 : 90%</p>
-      </li>
-      <li>
-        <h3>PhotoShop</h3>
-        <img src="" alt="PhotoShop">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, dignissimos..</p>
-        <p>성취율 : 80%</p>
-      </li>
-      <li>
-        <h3>Illustrator</h3>
-        <img src="" alt="Illustrator">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, dignissimos..</p>
-        <p>성취율 : 70%</p>
-      </li>
-    </ul>
-  </section>
-  <section id="portfolio">
-    <h2>PROTFOLIO</h2>
-    <article class="art-design">
-      <h3>DESIGN</h3>
-      <div class="banner-design">
-        <h4>BANNER DESIGN</h4>
-        <ul>
-          <li><img src="" alt="banner01"></li>
-          <li><img src="" alt="banner02"></li>
-          <li><img src="" alt="banner03"></li>
-          <li><img src="" alt="banner04"></li>
-        </ul>
-      </div>
-      <div class="icons-design">
-        <h4>ICONS</h4>
-        <img src="" alt="아이콘세트">
-      </div>
-      <div class="ci-design">
-        <h4>CI</h4>
-        <ul>
-          <li><img src="" alt="삼성"></li>
-          <li><img src="" alt="엘지"></li>
-          <li><img src="" alt="할리스"></li>
-          <li><img src="" alt="메가커피"></li>
-          <li><img src="" alt="메가박스"></li>
-          <li><img src="" alt="포트롤리오"></li>
-          <li><img src="" alt="다나와여행사"></li>
-          <li><img src="" alt="미래성형외과"></li>
-        </ul>
-      </div>
-    </article>
-    <article class="art-web-design">
-      <h3>WEB DESIGN</h3>
-      <div class="design-megabox">
-        <h4>megabox</h4>
-        <img src="" alt="메가박스 디자인">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit modi amet voluptatibus veritatis officiis exercitationem aspernatur, ad expedita similique voluptatum!</p>
-      </div>
-      <div class="design-myportfolio">
-        <h4>myportfolio</h4>
-        <img src="" alt="포트폴리오 디자인">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit modi amet voluptatibus veritatis officiis exercitationem aspernatur, ad expedita similique voluptatum!</p>
-      </div>
-    </article>
-    <article class="art-web-publishing">
-      <h3>WEB PUBLISHING</h3>
-      <div class="publishing-kwangdong">
-        <h4>광동제약</h4>
-        <img src="" alt="광동제약">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos quibusdam delectus itaque assumenda temporibus quasi, omnis deserunt reprehenderit vero laboriosam molestiae nobis! Cupiditate sint tenetur rem aspernatur dolores repudiandae a.</p>
-      </div>
-      <div class="publishing-hollys">
-        <h4>할리스</h4>
-        <img src="" alt="할리스">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos quibusdam delectus itaque assumenda temporibus quasi, omnis deserunt reprehenderit vero laboriosam molestiae nobis! Cupiditate sint tenetur rem aspernatur dolores repudiandae a.</p>
-      </div>
-      <div class="publishing-megacoffee">
-        <h4>메가커피</h4>
-        <img src="" alt="메가커피">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos quibusdam delectus itaque assumenda temporibus quasi, omnis deserunt reprehenderit vero laboriosam molestiae nobis! Cupiditate sint tenetur rem aspernatur dolores repudiandae a.</p>
-      </div>
-      <div class="publishing-megabox">
-        <h4>메가박스</h4>
-        <img src="" alt="메가박스">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos quibusdam delectus itaque assumenda temporibus quasi, omnis deserunt reprehenderit vero laboriosam molestiae nobis! Cupiditate sint tenetur rem aspernatur dolores repudiandae a.</p>
-      </div>
-    </article>
+    </section>
+    <section id="portfolio">
+      <h2>PROTFOLIO</h2>
+      <article class="art-design">
+        <h3>DESIGN</h3>
+        <div class="banner-design">
+          <h4>BANNER DESIGN</h4>
+          <ul>
+            <li><img src="" alt="banner01"></li>
+            <li><img src="" alt="banner02"></li>
+            <li><img src="" alt="banner03"></li>
+            <li><img src="" alt="banner04"></li>
+          </ul>
+        </div>
+        <div class="icons-design">
+          <h4>ICONS</h4>
+          <img src="" alt="아이콘세트">
+        </div>
+        <div class="ci-design">
+          <h4>CI</h4>
+          <ul>
+            <li><img src="" alt="삼성"></li>
+            <li><img src="" alt="엘지"></li>
+            <li><img src="" alt="할리스"></li>
+            <li><img src="" alt="메가커피"></li>
+            <li><img src="" alt="메가박스"></li>
+            <li><img src="" alt="포트롤리오"></li>
+            <li><img src="" alt="다나와여행사"></li>
+            <li><img src="" alt="미래성형외과"></li>
+          </ul>
+        </div>
+      </article>
+      <article class="art-web-design">
+        <h3>WEB DESIGN</h3>
+        <div class="design-megabox">
+          <h4>megabox</h4>
+          <img src="" alt="메가박스 디자인">
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit modi amet voluptatibus veritatis officiis exercitationem aspernatur, ad expedita similique voluptatum!</p>
+        </div>
+        <div class="design-myportfolio">
+          <h4>myportfolio</h4>
+          <img src="" alt="포트폴리오 디자인">
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit modi amet voluptatibus veritatis officiis exercitationem aspernatur, ad expedita similique voluptatum!</p>
+        </div>
+      </article>
+      <article class="art-web-publishing">
+        <h3>WEB PUBLISHING</h3>
+        <div class="publishing-kwangdong">
+          <h4>광동제약</h4>
+          <img src="" alt="광동제약">
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos quibusdam delectus itaque assumenda temporibus quasi, omnis deserunt reprehenderit vero laboriosam molestiae nobis! Cupiditate sint tenetur rem aspernatur dolores repudiandae a.</p>
+        </div>
+        <div class="publishing-hollys">
+          <h4>할리스</h4>
+          <img src="" alt="할리스">
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos quibusdam delectus itaque assumenda temporibus quasi, omnis deserunt reprehenderit vero laboriosam molestiae nobis! Cupiditate sint tenetur rem aspernatur dolores repudiandae a.</p>
+        </div>
+        <div class="publishing-megacoffee">
+          <h4>메가커피</h4>
+          <img src="" alt="메가커피">
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos quibusdam delectus itaque assumenda temporibus quasi, omnis deserunt reprehenderit vero laboriosam molestiae nobis! Cupiditate sint tenetur rem aspernatur dolores repudiandae a.</p>
+        </div>
+        <div class="publishing-megabox">
+          <h4>메가박스</h4>
+          <img src="" alt="메가박스">
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos quibusdam delectus itaque assumenda temporibus quasi, omnis deserunt reprehenderit vero laboriosam molestiae nobis! Cupiditate sint tenetur rem aspernatur dolores repudiandae a.</p>
+        </div>
+      </article>
+    </section>
+    <section id="contact">
+      <h2>CONTACT</h2>
+      <p>email : pam7461@naver.com</p>
+      <p>address : Lorem ipsum dolor sit amet consectetur.</p>
+      <ul>
+        <li>트위터</li>
+        <li>페이스북</li>
+        <li>카카오톡</li>      
+      </ul>
 
+    </section>
+    <footer id="footer">
+      <address>홍길동</address>
+    </footer>
   </section>
-  <section id="contact">
-    <h2>CONTACT</h2>
-    <p>email : pam7461@naver.com</p>
-    <p>address : Lorem ipsum dolor sit amet consectetur.</p>
-    <ul>
-      <li>트위터</li>
-      <li>페이스북</li>
-      <li>카카오톡</li>      
-    </ul>
+  <script src="./js/jquery.min.js"></script>
+  <script>
 
-  </section>
-  <footer>
-    <address>홍길동</address>
-  </footer>
+  </script>
 </body>
 </html>

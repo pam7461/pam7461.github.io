@@ -17,6 +17,7 @@ img,video,picture,svg{
   vertical-align:top;
 }
 svg{
+  width:100%;
   height:auto;
 }
 ul,ol,li{
@@ -36,8 +37,15 @@ iframe{
 ::placeholder{
   color:#000;
 }
+
 .clearfix::after{
   content:'';
   display:block;
   clear:both;
+}
+.f-left{
+  float:left;
+}
+.f-right{
+  float:right;
 }
