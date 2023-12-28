@@ -32,21 +32,23 @@
       font-family:'Noto Sans KR',sans-serif;
       font-weight:500;
       font-size:14px;
-      line-height:1.5em;
+      line-height:1.5;
       color:#fff;
       --main-color:#000;
       --sub-color:#fff;
+      scroll-behavior: smooth;
     }
     #wrap{
       overflow:hidden;
     }
     #header{
-      border-bottom:1px solid var(--main-color);
+      border-bottom:1px solid var(--sub-color);
       padding:2em 0;
       background:var(--main-color);
       color:var(--sub-color);
-      position:relative;
+      position:relative;     
     }
+    
     #header .container{
       width:1280px;
       margin:0 auto;
@@ -86,6 +88,28 @@
     }
     #header .main-nav li:hover{
       animation: bounce2 0.3s infinite;
+    }    
+    #home{
+      background:#000;
+    }
+    #home .container{      
+      height:calc(100vh - 109.5px);
+      text-align:center;
+      display:flex;
+      flex-flow:column nowrap;
+      justify-content:center;
+    }
+    #home h2{
+      margin-bottom:20px;
+      font-weight:700;
+      font-size:8em;
+      line-height:1.2;
+    }
+    #home p{
+      width:100%;
+      max-width:960px;
+      margin:0 auto;
+      font-size:3em;
     }
 
     @media (max-width:1280px){
@@ -99,9 +123,19 @@
         gap:2.5em;
         font-size:1.2em;
       }
+      #home .container{      
+        height:calc(100vh - 99px);       
+      }
+      #home h2{
+        font-size:6em;
+      }
     }
 
     @media (max-width:960px){
+     
+      #header.hide,#header.hide.active{        
+        top:0;
+      }
       #header .btn-nav{
         display:block;
       }
@@ -141,8 +175,13 @@
       }
       #header .main-nav{
         grid-template-columns:auto;
+      }      
+      #home h2{
+        font-size:4em;
       }
-
+      #home p{
+        font-size:2em;
+      }
     }
 
     @media (max-width:560px){
@@ -157,7 +196,7 @@
 </head>
 <body>
   <section id="wrap">
-    <header id="header">
+    <header id="header" class="">
       <div class="container">
         <h1><a href="./index.html"><span>2024</span><span>JHJ</span><span>PORTFOLIO</span></a></h1>
         <button class="btn-nav">
@@ -175,8 +214,10 @@
       </div>
     </header>
     <section id="home">
-      <h2>HOME</h2>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe nostrum qui nesciunt, architecto eos assumenda laborum, fugiat soluta laboriosam voluptatibus maxime obcaecati iure tenetur cumque voluptatem a quisquam nisi. Vitae.</p>    
+      <div class="container">
+        <h2>2024 JHJ PORTFOLIO</h2>
+        <p><span>나는 웹디자이너이다.</span></p>    
+      </div>
     </section>
     <section id="skills">
       <h2>SKILLS</h2>
@@ -308,6 +349,10 @@
       $('.btn-nav span').toggleClass('active');
       $('nav').toggleClass('active');
     })
+    
+    
+
+    
   </script>
 </body>
 </html>
