@@ -52,9 +52,19 @@
       padding:2em 0;
       background:var(--main-color);
       color:var(--sub-color);
-      position:relative;     
+      position:relative;       
     }
-    
+    #header.hide{
+      position:fixed;
+      left:0;
+      right:0;
+      top:-120px;
+      z-index:10000;
+      transition:0.3s;
+    }
+    #header.hide.active{
+      top:0;
+    }
     #header .container{
       width:1280px;
       margin:0 auto;
@@ -67,7 +77,9 @@
     #header h1{
       font-family:'Rubik Doodle Shadow','Noto Sans KR',sans-serif;
       font-weight:900;
-      font-size:2.5em;
+      font-size:2.5em;      
+    }
+    #header.active h1{
       animation: bounce1 1.4s infinite;
     }
     #header h1 span{
@@ -114,6 +126,11 @@
       background:url('./images/home-tit.jpg') no-repeat center;
       background-size:cover;
       background-clip:text;
+      transform:translateX(-200%);
+      transition:0.8s 1s;
+    }
+    #home h2.active{
+      transform:translateX(0);
     }
     #home p{
       width:100%;
@@ -150,11 +167,7 @@
       }
     }
 
-    @media (max-width:960px){
-     
-      #header.hide,#header.hide.active{        
-        top:0;
-      }
+    @media (max-width:960px){  
       #header .btn-nav{
         display:block;
       }
@@ -215,7 +228,7 @@
 </head>
 <body>
   <section id="wrap">
-    <header id="header" class="">
+    <header id="header">
       <div class="container">
         <h1><a href="./index.html"><span>2024</span><span>JHJ</span><span>PORTFOLIO</span></a></h1>
         <button class="btn-nav">
@@ -366,13 +379,32 @@
   <script src="./js/jquery.min.js"></script>
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <script>
+    $('#home h2').addClass('active');
     $('.btn-nav span').click(function(){
       $('.btn-nav span').toggleClass('active');
       $('nav').toggleClass('active');
     })
     
-    let elMsg = document.getElementById('my-msg');
-    console.log(elMsg);
+    // 스크롤 이벤트
+    $(window).scroll(function(){
+      let scrTop = $(this).scrollTop();
+      if(scrTop>=0 && scrTop<200){
+        // 200미만
+        $('#header').removeAttr('class');
+      }else if(scrTop>=200 && scrTop<400){
+        // 400미만
+        $('#header').addClass('hide');
+        $('#header').removeClass('active');
+      }else if(scrTop>=400){
+        // 400이상
+        $('#header').addClass('hide');
+        $('#header').addClass('active');
+      }
+    })
+
+    
+
+    let elMsg = document.getElementById('my-msg');    
     // -----------타이핑 택스트 ----------
     let myMsg = '나는 발전하는 웹디자이너 & 퍼블리셔이다.';
     let insertMsg = '';                
@@ -399,14 +431,7 @@
     }
 
 
-    let loop = setInterval(tmp,100);
-    let cnt = 0;
-    function tmp(){
-      console.log(cnt++);
-      if(cnt>=10){
-        clearInterval(loop);
-      }
-    }
+    
   </script>
 </body>
 </html>
