@@ -25,6 +25,12 @@
       0%{opacity:0;transform:scale(0) rotate(360deg)}
       100%{opacity:1;transform:scale(1) rotate(0deg)}
     }
+    @keyframes cursor {
+      0%{background:#fff;}
+      70%{background:#fff;}
+      71%{background:transparent;}      
+      100%{background:transparent;}
+    }
 
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
@@ -115,7 +121,16 @@
       margin:0 auto;
       font-size:3em;
     }
-
+    #home p::after{
+      content:'';
+      display:inline-block;
+      width:2px;
+      height:80%;
+      transform:translateY(10px);
+      margin-left:0.5em;
+      background:#fff;
+      animation: cursor 0.8s infinite;
+    }
     @media (max-width:1280px){
       #header .container{
         width:100%;
@@ -356,33 +371,42 @@
       $('nav').toggleClass('active');
     })
     
-    // var typed = new Typed('#home-txt', {
-    //   strings: [
-    //     '나는 디자니',
-    //     '나는 디자이너이다.',
-    //     '나는 웹디자너 ',
-    //     '나는 웹디자이너이다.',
-    //     '나는 발전하는 웹디자이너 퍼블리셔이다.'
-    //   ],
-    //   typeSpeed:100,
-    //   smartBackspace: true,
-    // });
-
+    let elMsg = document.getElementById('my-msg');
+    console.log(elMsg);
+    // -----------타이핑 택스트 ----------
     let myMsg = '나는 발전하는 웹디자이너 & 퍼블리셔이다.';
     let insertMsg = '';                
     let startIdx = 0;
+    // -------- 글자 타이핑 스피드(ms)------------
+    let typedTime = 200;
 
-    let myMsgTyped = setInterval(function(){
-      insertMsg += myMsg.substr(startIdx++,1);
-      $('#my-msg').text(insertMsg);
-      if(startIdx>=myMsg.length){
-        startIdx=0;
-        insertMsg='';
+    // --------- 스트링 반복 딜레이 ---------
+    let loopTime = (myMsg.length + 10) * typedTime;
+
+    fnTyped();
+    let looptyped = setInterval(fnTyped,loopTime);
+      
+    function fnTyped(){
+      let myMsgTyped = setInterval(function(){
+        insertMsg += myMsg.substr(startIdx++,1);
+        elMsg.innerText = insertMsg;
+        if(startIdx>=myMsg.length){
+          startIdx=0;
+          insertMsg='';
+          clearInterval(myMsgTyped);
+        }
+      },typedTime);
+    }
+
+
+    let loop = setInterval(tmp,100);
+    let cnt = 0;
+    function tmp(){
+      console.log(cnt++);
+      if(cnt>=10){
+        clearInterval(loop);
       }
-
-    },300);
-
-    // $('#my-msg').text('나는 발전하는 웹디자이너 & 퍼블리셔이다.');
+    }
   </script>
 </body>
 </html>
