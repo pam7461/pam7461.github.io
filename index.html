@@ -47,22 +47,20 @@
     #wrap{
       overflow:hidden;
     }
-    #header{
+    #header{      
       border-bottom:1px solid var(--sub-color);
       padding:2em 0;
       background:var(--main-color);
       color:var(--sub-color);
-      position:relative;       
-    }
-    #header.hide{
       position:fixed;
       left:0;
       right:0;
       top:-120px;
-      z-index:10000;
-      transition:0.3s;
+      z-index:10000; 
+      transition:0.3s;     
     }
-    #header.hide.active{
+   
+    #header.active{
       top:0;
     }
     #header .container{
@@ -111,16 +109,16 @@
       padding:100px 0;
     }
     #wrap section .container{
-      height:100vh;
+      height:100%;
     }
 
 
     #home{
       background:#000;
+      height:100vh;
     }
     
-    #home .container{      
-      height:calc(100vh - 109.5px);
+    #home .container{            
       text-align:center;
       display:flex;
       flex-flow:column nowrap;
@@ -160,6 +158,11 @@
     #profile{
       background:#fff;
       color:#000;
+      opacity:0;
+      transition:0.3s;
+    }
+    #profile.active{
+      opacity:1;
     }
     #profile .container{
       width:100%;
@@ -244,6 +247,9 @@
       bottom:-40px;
     }
 
+    #skills{background:#000;color:#fff;}
+    #portfolio{background:#fff;color:#000;}
+    #footer{background:#000;color:#fff;}
     
     @media (max-width:1280px){
       #header .container{
@@ -520,6 +526,13 @@
       let winHeight = $(window).height();// 창높이
       let proAbsY = $('#profile').offset().top; //프로필 절대좌표Y
       let scrTop = $(window).scrollTop();
+      let tmp = proAbsY - winHeight / 1.5;
+      // console.log(`윈도우높이:${winHeight}, 프로필좌표:${proAbsY},스크롤거리:${scrTop}`)
+      if(scrTop >= tmp){
+        $('#profile').addClass('active');
+      }else{
+        $('#profile').removeClass('active');
+      }
     })
     
 
@@ -536,14 +549,9 @@
       let scrTop = $(this).scrollTop();
       if(scrTop>=0 && scrTop<200){
         // 200미만
-        $('#header').removeAttr('class');
-      }else if(scrTop>=200 && scrTop<400){
-        // 400미만
-        $('#header').addClass('hide');
         $('#header').removeClass('active');
-      }else if(scrTop>=400){
-        // 400이상
-        $('#header').addClass('hide');
+      }else if(scrTop>=200){
+        // 200이상        
         $('#header').addClass('active');
       }
     })
