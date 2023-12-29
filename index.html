@@ -106,10 +106,19 @@
     }
     #header .main-nav li:hover{
       animation: bounce2 0.3s infinite;
-    }    
+    }   
+    #wrap section{
+      padding:100px 0;
+    }
+    #wrap section .container{
+      height:100vh;
+    }
+
+
     #home{
       background:#000;
     }
+    
     #home .container{      
       height:calc(100vh - 109.5px);
       text-align:center;
@@ -147,6 +156,31 @@
       margin-left:0.5em;
       background:#fff;
       animation: cursor 0.8s infinite;
+    }
+    #profile{
+      background:#fff;
+      color:#000;
+    }
+    #profile .container{
+      width:100%;
+      max-width:1280px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+    #profile h2{
+      margin-bottom:0.5em;
+      font-family:'Rubik Doodle Shadow','Noto Sans KR',sans-serif;
+      font-weight:900;
+      font-size:8em;
+      text-align:center;
+    }
+    #profile .grid-container{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:80px;
+    }
+    #profile .profile01{
+      grid-area:1/1/3/2;
     }
     @media (max-width:1280px){
       #header .container{
@@ -214,6 +248,9 @@
       #home p{
         font-size:2em;
       }
+      #profile h2{
+        font-size:6em;
+      }
     }
 
     @media (max-width:560px){
@@ -222,6 +259,9 @@
       }
       #header h1 span:first-child{
         display:none;
+      }
+      #profile h2{
+        font-size:4em;
       }
     }
   </style>
@@ -238,9 +278,9 @@
         <nav class="">
           <ul class="main-nav">
             <li><a href="#home">home</a></li>
+            <li><a href="#profile">profile</a></li>
             <li><a href="#skills">skills</a></li>
-            <li><a href="#portfolio">portfolio</a></li>
-            <li><a href="#contact">contact us</a></li>
+            <li><a href="#portfolio">portfolio</a></li>            
           </ul>
         </nav>
       </div>
@@ -250,6 +290,39 @@
         <h2>2024 JHJ PORTFOLIO</h2>
         <!-- <p id="home-txt"></p>     -->
         <p id="my-msg"></p>
+      </div>
+    </section>
+    <section id="profile">
+      <div class="container">
+        <h2>PROFILE</h2>
+        <div class="grid-container">
+          <div class="profile01">
+            <div class="img-box"><img src="./images/main-photo.jpg" alt="내사진"></div>
+            <div class="profile01-con">
+              <p class="date">1999.09.09</p>
+              <p class="name">홍길동</p>
+              <p>Lorem ipsum <strong>dolor sit amet,</strong> consectetur adipisicing elit. Consequatur, fugit?</p>
+              <p>Lorem <strong>ipsum dolor</strong> sit amet.</p>
+            </div>
+          </div>
+          <div class="profile02">
+            <h3>학력</h3>
+            <ul>
+              <li>인천고등하교 졸업</li>
+              <li>인천대학교 졸업</li>
+              <li>인천IT직업전문학교 수료</li>
+            </ul>
+          </div>
+          <div class="profile03">
+            <h3>경력</h3>
+            <ul>
+              <li>육군 병장 만기전역</li>
+              <li>인천농협 청원경찰</li>
+              <li>인천시청 인턴</li>
+              <li>인천헬스장 트레이너</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
     <section id="skills">
@@ -360,18 +433,7 @@
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos quibusdam delectus itaque assumenda temporibus quasi, omnis deserunt reprehenderit vero laboriosam molestiae nobis! Cupiditate sint tenetur rem aspernatur dolores repudiandae a.</p>
         </div>
       </article>
-    </section>
-    <section id="contact">
-      <h2>CONTACT</h2>
-      <p>email : pam7461@naver.com</p>
-      <p>address : Lorem ipsum dolor sit amet consectetur.</p>
-      <ul>
-        <li>트위터</li>
-        <li>페이스북</li>
-        <li>카카오톡</li>      
-      </ul>
-
-    </section>
+    </section>    
     <footer id="footer">
       <address>홍길동</address>
     </footer>
@@ -379,7 +441,7 @@
   <script src="./js/jquery.min.js"></script>
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <script>
-    $('#home h2').addClass('active');
+    $('#home h2').addClass('active');    
     $('.btn-nav span').click(function(){
       $('.btn-nav span').toggleClass('active');
       $('nav').toggleClass('active');
