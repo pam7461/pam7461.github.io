@@ -231,6 +231,19 @@
       font-weight:100;
       font-size:2em;
     }
+    #profile .profile02{
+      position:relative;
+    }
+    #profile .profile02::after{
+      content:'';
+      display:block;
+      width:100%;
+      height:1px;
+      background:#000;
+      position:absolute;
+      bottom:-40px;
+    }
+
     
     @media (max-width:1280px){
       #header .container{
@@ -307,6 +320,9 @@
       }
       #profile .profile01{
         grid-area:unset;
+      }
+      #profile .profile02::after{
+        bottom:-20px;
       }
     }
 
@@ -500,11 +516,20 @@
   <script src="./js/jquery.min.js"></script>
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <script>
-    $('#home h2').addClass('active');    
-    $('.btn-nav span').click(function(){
+    $(window).scroll(function(){      
+      let winHeight = $(window).height();// 창높이
+      let proAbsY = $('#profile').offset().top; //프로필 절대좌표Y
+      let scrTop = $(window).scrollTop();
+    })
+    
+
+    $('#home h2').addClass('active');   
+    
+    $('.btn-nav span,nav li').click(function(){
       $('.btn-nav span').toggleClass('active');
       $('nav').toggleClass('active');
-    })
+    })    
+    
     
     // 스크롤 이벤트
     $(window).scroll(function(){
